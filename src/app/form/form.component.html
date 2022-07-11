@@ -1,5 +1,32 @@
 <p>form works!</p>
 
-<form>
+<div class="container">
+  <form [formGroup]="Form">
+    <div class="row">
+      <mat-form-field>
+        <mat-label>Login</mat-label>
+        <input matInput formControlName="login">
+        <mat-error>Введите логин</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input type="password" matInput formControlName="password">
+        <mat-error> Минимальная длина пароля - 6 символов. Введите корректный пароль</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <button
+        id="confirmButton"
+        type="submit"
+        mat-raised-button
+        color="primary"
+        [disabled]="!Form.valid"
+        >
+        Войти
+      </button>
+    </div>
+  </form>
+</div>
 
-</form>
